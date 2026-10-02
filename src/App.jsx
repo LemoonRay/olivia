@@ -136,7 +136,7 @@ const memories = [
     title: "The slayers 2 parkour & The Notebook.",
     label: "02 — TOO MANY TEARS",
     description:
-      "First, you cried over a parkour. Then a few hours later, The Notebook made you cry again. And somehow, I loved you a little more each time.",
+      "First, you cried over slayers parkour. Then a few hours later, we watched The Notebook and it made you cry again. And somehow, I loved you a little more each time.",
     photos: [
       asset("/memories/slayers2.png"),
       asset("/memories/slayers2ava.png"),
