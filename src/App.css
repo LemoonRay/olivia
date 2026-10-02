@@ -97,6 +97,7 @@ button {
   font-size: clamp(3rem, 8vw, 6rem);
   line-height: 1.05;
   margin-bottom: 30px;
+  color: #3b2942;
 }
 
 .typewriter {

@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./App.css";
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const START_DATE = new Date("2026-08-06T15:12:00");
 
 /* CONTENTS */
@@ -14,7 +16,7 @@ const chapters = [
     text: "We met in a Roblox game. At the time, I had absolutely no idea that meeting you would eventually lead to this.",
     photos: [
       {
-        src: "/memories/gakuran.png",
+        src: asset("/memories/gakuran.png"),
         caption: "Where we met",
         date: "Roblox - Gakuran",
       },
@@ -26,12 +28,12 @@ const chapters = [
     text: "The same day we met, I asked for your discord, and of course, I immediately sent you a message after you accepted my friend request.",
     photos: [
       {
-        src: "/memories/first-message.png",
+        src: asset("/memories/first-message.png"),
         caption: "Our first discord convo",
         date: "August 1, 2026",
       },
       {
-        src: "/memories/first-message2.png",
+        src: asset("/memories/first-message2.png"),
         caption: "Our first discord convo",
         date: "August 1-2, 2026"
       }
@@ -43,17 +45,17 @@ const chapters = [
     text: "This was when we really started talking. You used to tease me with fake details about yourself. I was gullible enough to believe them most of the time, but eventually, I just got used to it. We played Sniper Arena and Bomb Chip. Nothing too flirty. Nothing complicated. We were just friends... or at least, that's what I thought.",
     photos: [
       {
-        src: "/memories/SniperArena1.png",
+        src: asset("/memories/SniperArena1.png"),
         caption: "Our first discord call - we played Sniper Arena :> tapos I beat ya ass so gihanggat tkag pautokay",
         date: "August 6, 2026",
       },
       {
-        src: "/memories/gulliblenomo.png",
+        src: asset("/memories/gulliblenomo.png"),
         caption: "You always fooled me on gakuran so I just started doubting u by this time T__T",
         date: "August 8, 2026",
       },
       {
-        src: "/memories/SniperArena2.png",
+        src: asset("/memories/SniperArena2.png"),
         caption: "we continued playing Sniper Arena, we were very competitive ani na time",
         date: "August 9, 2026",
       }
@@ -65,52 +67,52 @@ const chapters = [
     text: "One conversation became another, and eventually talking to you became part of my everyday life.",
     photos: [
       {
-        src: "/memories/everyday1aug10.png",
+        src: asset("/memories/everyday1aug10.png"),
         caption: "I started getting really comfortable here, even started playing inappropriate songs near you T__T",
         date: "August 10, 2026",
       },
       {
-        src: "/memories/everydayDriveABus.png",
+        src: asset("/memories/everydayDriveABus.png"),
         caption: "I started getting really comfortable here, even started playing inappropriate songs near you T__T",
         date: "August 14, 2026",
       },
       {
-        src: "/memories/everydayLoveaug15.png",
+        src: asset("/memories/everydayLoveaug15.png"),
         caption: "until we eventuallly started calling each other 'love' on dms",
         date: "August 15, 2026",
       },
       {
-        src: "/memories/everydayCall2Wake.png",
+        src: asset("/memories/everydayCall2Wake.png"),
         caption: "hehe",
         date: "August 23, 2026",
       },
       {
-        src: "/memories/everydayFirstphoto.png",
+        src: asset("/memories/everydayFirstphoto.png"),
         caption: "the very first photo you sent me na I only got a glimpse of, grrr la jd na save",
         date: "August 23, 2026",
       },
       {
-        src: "/memories/everydayGuessedyourLoc.png",
+        src: asset("/memories/everydayGuessedyourLoc.png"),
         caption: "HAWHWAHAHA natag anan najd diay unta nako taga aha ka ba",
         date: "August 23, 2026",
       },
       {
-        src: "/memories/everydayPossessive.png",
+        src: asset("/memories/everydayPossessive.png"),
         caption: "possessive yarn?",
         date: "August 24, 2026",
       },
       {
-        src: "/memories/everydayCDP1.png",
+        src: asset("/memories/everydayCDP1.png"),
         caption: "bro is really trying to get that cdp fam T__T",
         date: "August 25, 2026",
       },
       {
-        src: "/memories/everydayCDP2.png",
+        src: asset("/memories/everydayCDP2.png"),
         caption: "INULTIHAN",
         date: "August 26, 2026",
       },
       {
-        src: "/memories/everydayCDP3.png",
+        src: asset("/memories/everydayCDP3.png"),
         caption: "DIDN'T HAVE A SCREENSHOT SA FIRST CDP SOOO T__T DUNNO WHERE IT WENT OMG",
         date: "October 2, 2026",
       },
@@ -125,9 +127,9 @@ const memories = [
     description:
       "Somewhere between you panicking in my DMs and me trying to calm you down, I realized that I had really, really fallen for you.",
     photos: [
-      "/memories/mclost1.png",
-      "/memories/mclost2.png",
-      "/memories/mclost3.png",
+      asset("/memories/mclost1.png"),
+      asset("/memories/mclost2.png"),
+      asset("/memories/mclost3.png"),
     ],
   },
   {
@@ -136,11 +138,11 @@ const memories = [
     description:
       "First, you cried over a parkour. Then a few hours later, The Notebook made you cry again. And somehow, I loved you a little more each time.",
     photos: [
-      "/memories/slayers2.png",
-      "/memories/slayers2ava.png",
-      "/memories/theNotebook.png",
-      "/memories/crybaby.png",
-      "/memories/crybaby2.png",
+      asset("/memories/slayers2.png"),
+      asset("/memories/slayers2ava.png"),
+      asset("/memories/theNotebook.png"),
+      asset("/memories/crybaby.png"),
+      asset("/memories/crybaby2.png"),
     ],
   },
   {
@@ -149,26 +151,26 @@ const memories = [
     description:
       "The games, the random conversations, the jokes, and all those little moments I somehow ended up saving screenshots of.",
     photos: [
-      "/memories/memories1.png",
-      "/memories/memories2.png",
-      "/memories/memories3.png",
-      "/memories/memories4.png",
-      "/memories/memories5.png",
-      "/memories/memories6.png",
-      "/memories/memories7.png",
-      "/memories/memories8.png",
-      "/memories/memories9.png",
-      "/memories/memories10.png",
-      "/memories/memories11.png",
-      "/memories/memories12.png",
-      "/memories/memories13.png",
-      "/memories/memories14.png",
-      "/memories/memories15.png",
-      "/memories/memories16.png",
-      "/memories/memories17.png",
-      "/memories/memories18.png",
-      "/memories/memories19.png",
-      "/memories/memories20.png",
+      asset("/memories/memories1.png"),
+      asset("/memories/memories2.png"),
+      asset("/memories/memories3.png"),
+      asset("/memories/memories4.png"),
+      asset("/memories/memories5.png"),
+      asset("/memories/memories6.png"),
+      asset("/memories/memories7.png"),
+      asset("/memories/memories8.png"),
+      asset("/memories/memories9.png"),
+      asset("/memories/memories10.png"),
+      asset("/memories/memories11.png"),
+      asset("/memories/memories12.png"),
+      asset("/memories/memories13.png"),
+      asset("/memories/memories14.png"),
+      asset("/memories/memories15.png"),
+      asset("/memories/memories16.png"),
+      asset("/memories/memories17.png"),
+      asset("/memories/memories18.png"),
+      asset("/memories/memories19.png"),
+      asset("/memories/memories20.png"),
     ],
   },
 ];
@@ -755,7 +757,7 @@ function YesPage() {
 
           <audio
             ref={audioRef}
-            src="/voicemessage/message.mp3" 
+            src={asset("voicemessage/message.mp3")}
             loop
             preload="auto"
             onPlay={() => setPlaying(true)}
