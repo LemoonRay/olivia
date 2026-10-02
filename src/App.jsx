@@ -123,9 +123,9 @@ const chapters = [
 const memories = [
   {
     title: "You lost my gift in Minecraft.",
-    label: "01 — THE MOMENT I KNEW",
+    label: "01 — THE MOMENT I FELL HARD",
     description:
-      "Somewhere between you panicking in my DMs and me trying to calm you down, I realized that I had really, really fallen for you.",
+      "Somewhere between you panicking in my DMs and me trying to calm you down, I saw how much you care about my feelings and how much you care about the things I gave you, even though they're just in-game. That was the exact moment I really, really fell for you.",
     photos: [
       asset("/memories/mclost1.png"),
       asset("/memories/mclost2.png"),
@@ -136,7 +136,7 @@ const memories = [
     title: "The slayers 2 parkour & The Notebook.",
     label: "02 — TOO MANY TEARS",
     description:
-      "First, you cried over a parkour. Then a few hours later, The Notebook made you cry again. And somehow, I loved you a little more each time.",
+      "First, you cried over slayers parkour. Then a few hours later, we watched The Notebook and it made you cry again. And somehow, I loved you a little more each time.",
     photos: [
       asset("/memories/slayers2.png"),
       asset("/memories/slayers2ava.png"),
@@ -147,9 +147,9 @@ const memories = [
   },
   {
     title: "All the little moments.",
-    label: "03 — THE MOMENTS I KEEP THINKING ABOUT",
+    label: "03 — THE MOMENTS WE SHARE",
     description:
-      "The games, the random conversations, the jokes, and all those little moments I somehow ended up saving screenshots of.",
+      "The time we spent with each other in-game, how competitive we are, and all those little moments I somehow ended up saving screenshots of...",
     photos: [
       asset("/memories/memories1.png"),
       asset("/memories/memories2.png"),
