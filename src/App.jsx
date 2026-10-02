@@ -639,7 +639,7 @@ function Proposal({ onYes }) {
         delay={1800}
       />
 
-      <h1 className="ask">Will you be my girlfriend? ❤️</h1>
+      <h1 className="ask">Will you be my girlfriend?</h1>
 
       <div className="buttons">
         <button
