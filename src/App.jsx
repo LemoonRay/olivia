@@ -4,7 +4,7 @@ import "./App.css";
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
 
-const START_DATE = new Date("2026-08-06T15:12:00");
+const START_DATE = new Date("2026-08-01T04:20:00");
 
 /* CONTENTS */
 
