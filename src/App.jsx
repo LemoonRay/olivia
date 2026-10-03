@@ -774,6 +774,78 @@ function YesPage() {
 }
 
 
+/* BACKGROUND MUSIC */
+
+function BackgroundMusic() {
+  const audioRef = useRef(null);
+  const userPaused = useRef(false);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = 0.35;
+
+    const events = ["click", "keydown", "touchend", "pointerup"];
+
+    const removeListeners = () =>
+      events.forEach((e) => window.removeEventListener(e, start));
+
+    function start() {
+      if (userPaused.current) return;
+      audio
+        .play()
+        .then(removeListeners)
+        .catch(() => {});
+    }
+
+  
+    start();
+    events.forEach((e) => window.addEventListener(e, start));
+
+    return () => {
+      removeListeners();
+      audio.pause(); // stops when she goes to the YES page
+    };
+  }, []);
+
+  const toggle = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      userPaused.current = false;
+      audio.play().catch(() => {});
+    } else {
+      userPaused.current = true;
+      audio.pause();
+    }
+  };
+
+  return (
+    <>
+      <audio
+        ref={audioRef}
+        src={asset("music/bgm1.mp3")}
+        loop
+        preload="auto"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+      />
+      <button
+        type="button"
+        className={playing ? "music-toggle playing" : "music-toggle"}
+        onClick={toggle}
+        aria-label={playing ? "Pause background music" : "Play background music"}
+        aria-pressed={playing}
+      >
+        <span className="music-icon">{playing ? "♪" : "🔇"}</span>
+        <span className="music-text">{playing ? "Pause music" : "Play music"}</span>
+      </button>
+    </>
+  );
+}
+
 /* APP */
 
 const getPage = () => (window.location.hash === "#/yes" ? "yes" : "home");
@@ -822,6 +894,7 @@ function App() {
 
   return (
     <main>
+      <BackgroundMusic />
       {/* HERO */}
       <section className="hero">
         <div className="hero-content">
